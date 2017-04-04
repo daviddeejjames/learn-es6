@@ -1,3 +1,12 @@
-console.log("HELLO ES6!");
+function hello(){
+	let message = "Hi Nathalia";
+	console.log(message);
+}
 
-console.log("IT BEGINS, DYNAMIC CODING");
+function greetings(){
+	let message = "How was your day?";
+	console.log(message);
+}
+
+hello();
+greetings();
