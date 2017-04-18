@@ -1,12 +1,29 @@
-function hello(){
-	let message = "Hi Nathalia";
-	console.log(message);
+//
+// Generators
+//
+function* letterMaker(){
+	console.log("=Our Letter Generator/Iterator=");
+	yield 'a';
+	yield 'b';
+	yield 'c';
 }
 
-function greetings(){
-	let message = "How was your day?";
-	console.log(message);
+let letterGen = letterMaker();
+
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+console.log(letterGen.next().value);
+
+function* countMaker(){
+	console.log("=Our Counter/ID Generator=");
+	let count = 0;
+	while (count < 3){
+		yield count +=1;
+	}
 }
 
-hello();
-greetings();
+let counter = countMaker();
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
+
