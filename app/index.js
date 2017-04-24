@@ -27,22 +27,32 @@ console.log(counter.next().value);
 console.log(counter.next().value);
 console.log(counter.next().value);
 
-
+console.log("-Evens only counter-");
 function* evens(){
 	let count = 0;
 	while(true){
 		count += 2;
 		let reset = yield count;
 
-		if(rest){
+		if(reset){
 			count = 0;
 		}
 	}
 }
 
 let sequence = evens();
-console.log(counter.next().value);
-console.log(counter.next().value);
-console.log(counter.next().value);
-console.log(counter.next(true).value);
-console.log(counter.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next(true).value + " < ooo reset"); //what the heck
+console.log(sequence.next().value);
+
+//
+// Promises
+//
+console.log("=Starting promises=");
+let p = new Promise((resolve, reject) =>{
+	resolve('Resolved promise data');
+});
+
+p.then(response => console.log(response)).catch(error => console.log(error));
